@@ -3,24 +3,30 @@
 {% block content %}
 <h1>Chompski #{{chompskis.chompskis_id}}'s Details</h1>
 
-    <div class="card">
-        <div class="card-header">
-          <Strong>{{ chompskis.name }}</Strong>
-        </div>
-        <div class="card-body">
-          <Strong>Age:</Strong><p class="card-text">{{ chompskis.age }}</p>
+<div class="card">
+    <div class="card-header">
+        <Strong>{{ chompskis.name }}</Strong>
+    </div>
+    <div class="card-body">
+        <Strong>Age:</Strong>
+        <p class="card-text">{{ chompskis.age }}</p>
 
-          <Strong>Height:</Strong><p class="card-text">{{ chompskis.height }}</p>
+        <Strong>Height:</Strong>
+        <p class="card-text">{{ chompskis.height }}</p>
 
-          <Strong>Weight:</Strong><p class="card-text">{{ chompskis.weight }}</p>
+        <Strong>Weight:</Strong>
+        <p class="card-text">{{ chompskis.weight }}</p>
 
-          <Strong>Number of Teeth:</Strong><p class="card-text">{{ chompskis.no_teeth }}</p>
+        <Strong>Number of Teeth:</Strong>
+        <p class="card-text">{{ chompskis.no_teeth }}</p>
 
-          <Strong>Swarm id:</Strong><p class="card-text">{{ chompskis.swarm_id }}</p>
+        <Strong>Swarm id:</Strong>
+        <p class="card-text">{{ chompskis.swarm_id }}</p>
 
-          <a href="{% url 'delete_chompski' chompskis.chompskis_id %}" class="btn btn-danger">'Delete' Chompski</a>
-        </div>
-      </div>
-      <br/>
-      <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+        <a href="{% url 'delete_chompski' chompskis.chompskis_id %}" class="btn btn-danger">'Delete' Chompski</a>
+        <a href="{% url 'update_chompski' chompskis.chompskis_id %}" class="btn btn-secondary">Update Chompski</a>
+    </div>
+</div>
+<br/>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
 {% endblock %}

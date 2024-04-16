@@ -12,12 +12,12 @@
       <thead class="table-dark">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Age</th>
-          <th scope="col">Height</th>
-          <th scope="col">Weight</th>
-          <th scope="col">no_teeth</th>
-          <th scope="col">Swarm_id</th>
+          <th scope="col"><a href="{% url 'chompski_sortby_name' %}" >Name</a></th>
+          <th scope="col"><a href="{% url 'chompski_sortby_age' %}" >Age</a></th>
+          <th scope="col"><a href="{% url 'chompski_sortby_height' %}" >Height</a></th>
+          <th scope="col"><a href="{% url 'chompski_sortby_weight' %}" >Weight</a></th>
+          <th scope="col"><a href="{% url 'chompski_sortby_teeth' %}" >no_teeth</a></th>
+          <th scope="col"><a href="{% url 'chompski_sortby_swarm' %}" >Swarm_id</a></th>
         </tr>
       </thead>
       <tbody>

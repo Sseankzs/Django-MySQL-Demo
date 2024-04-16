@@ -19,12 +19,12 @@
             <a class="nav-link active" aria-current="page" href="/swarms/">Swarms</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'statistics'%}">Statistics</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'logout'%}">Logout</a>
           </li>
           {% else %}
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'register'%}">Register</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Login</a>
           </li>

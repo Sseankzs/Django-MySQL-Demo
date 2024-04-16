@@ -43,10 +43,12 @@ class Oversees(models.Model):
 
 class Swarm(models.Model):
     swarm_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=45)
+    name = models.CharField(max_length=45) 
     latitude = models.FloatField(blank=True, null=True)
     longitude = models.FloatField(blank=True, null=True)
 
     class Meta:
         db_table = 'swarm'
+    def __str__(self): 
+        return (f"{self.swarm_id}")
 

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Swarm #{{swarm.swarm_id}}'s Details</h1>
+
+<div class="card">
+    <div class="card-header">
+        <Strong>{{ swarm.name }}</Strong>
+    </div>
+    <div class="card-body">
+
+        <Strong>Number of Chompskis:</Strong><p class="card-text">{{ quantity }}</p>
+
+        <Strong>longitude:</Strong><p class="card-text">{{ swarm.longitude }}</p>
+
+        <Strong>latitude:</Strong><p class="card-text">{{ swarm.latitude }}</p>
+        <a href="{% url 'delete_swarm' swarm.swarm_id %}" class="btn btn-danger">'Delete' Swarm</a>
+        <a href="{% url 'update_swarm' swarm.swarm_id %}" class="btn btn-secondary">Update Swarm</a>
+    </div>
+</div>
+<br/>
+<a href="{% url 'swarms' %}" class="btn btn-secondary">Back</a>
+{% endblock %}

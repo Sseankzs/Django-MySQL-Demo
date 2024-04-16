@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br/>
+<br/>
+<div class="card">
+   
+    <div class="card-header">
+        <Strong>Statistics</Strong>
+    </div>
+    <div class="card-body">
+
+        <Strong>Total Number of Chompskis:</Strong><p class="card-text">{{ total_chompskis }}</p>
+
+        <Strong>Total Number of Swarms:</Strong><p class="card-text">{{ total_swarms }}</p>
+
+        <Strong>Average age of Chompskis:</Strong><p class="card-text">{{ average_age }}</p>
+
+        <Strong>Average number of Chompskis per Swarm:</Strong><p class="card-text">{{ average_quantity }}</p>
+
+    </div>
+</div>
+<br/>
+<a href="{% url 'swarms' %}" class="btn btn-secondary">Back</a>
+{% endblock %}

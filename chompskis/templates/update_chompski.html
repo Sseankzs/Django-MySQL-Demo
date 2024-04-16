@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Update Gnome Chompski</h1>
+<div class="col-md-6 offset-md-3">
+    <form method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-secondary">Update Chompski</button>
+    </form>
+</div>
+
+{% endblock %}

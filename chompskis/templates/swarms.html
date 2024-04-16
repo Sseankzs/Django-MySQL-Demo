@@ -5,33 +5,31 @@
 
     <h1>Welcome to the Gnome Chompski Database Management System</h1>
     <h2>Gnome Chompski Swarms</h2>
+    <a href="{% url 'add_swarm' %}" class="btn btn-secondary">Add Swarm</a>
+    <br/>
     <br/>
     <table class="table table-striped table-hover table-bordered">
       <thead class="table-dark">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Swarm Name</th>
-          <th scope="col">longitude</th>
-          <th scope="col">latitude</th>
+          <th scope="col"><a href="{% url 'swarm_sortby_name' %}">Swarm Name</a></th>
+          <th scope="col"><a href="{% url 'swarm_sortby_quantity' %}">Number of Chompskis</a></th>
+          <th scope="col"><a href="{% url 'swarm_sortby_longitude' %}">longitude</a></th>
+          <th scope="col"><a href="{% url 'swarm_sortby_latitude' %}">latitude</a></th>
         </tr>
       </thead>
       <tbody>
 {% if swarms%}
     {%for swarm in swarms%}
         <tr>
-          <td>{{ swarm.swarm_id }}</td>
-          <td>{{ swarm.name }}</td>
-          <td>{{ swarm.longitude }}</td>
-          <td>{{ swarm.latitude }}</td>
+            <td><a href="{% url 'swarm_details' swarm.swarm_id%}">{{ swarm.swarm_id }}</td>
+            <td>{{ swarm.name }}</td>
+            <td>{{ swarm.quantity }}</td>
+            <td>{{ swarm.longitude }}</td>
+            <td>{{ swarm.latitude }}</td>
         </tr>
   {% endfor %}
-{% endif %} 
-          
-
-
-        
-    
-
+{% endif %}
 
 {%  else  %}
     <br/>

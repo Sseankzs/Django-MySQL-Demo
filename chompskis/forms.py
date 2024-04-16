@@ -38,7 +38,27 @@ class AddChompskiForm(forms.ModelForm):
     weight = forms.FloatField(required=False, label="", widget=forms.NumberInput(attrs={'class': 'form-control','placeholder': 'Weight'}))
     no_teeth = forms.IntegerField(required=False, label="", widget=forms.NumberInput(attrs={'class': 'form-control','placeholder': 'Number of Teeth'}))
     #TODO fix
-    swarm_id = forms.ModelChoiceField(queryset=Swarm.objects.all(), label="", widget=forms.Select(attrs={'class': 'form-control'}))
+    swarm_id = forms.ModelChoiceField(queryset=Swarm.objects.all() , label="", widget=forms.Select(attrs={'class': 'form-control'}))
     class Meta:
         model = GnomeChompskis
         fields = ('name', 'age', 'height', 'weight', 'no_teeth', 'swarm_id')
+           
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        
+        # If the instance is being created and no swarm_id is provided in the form,
+        # or if the swarm_id is changed, update the swarm_id
+        if not instance.pk or self.has_changed():
+            instance.swarm_id = self.cleaned_data['swarm_id'].swarm_id
+        
+        if commit:
+            instance.save()
+        return instance
+
+class AddSwarmForm(forms.ModelForm):
+    name = forms.CharField(required=True, label="", widget=forms.TextInput(attrs={'class': 'form-control','placeholder': 'Name'}))
+    latitude = forms.FloatField(required=False, label="", widget=forms.NumberInput(attrs={'class': 'form-control','placeholder': 'Latitude'}))
+    longitude = forms.FloatField(required=False, label="", widget=forms.NumberInput(attrs={'class': 'form-control','placeholder': 'Longitude'}))
+    class Meta:
+        model = Swarm
+        fields = ('name', 'latitude', 'longitude')
