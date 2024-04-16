@@ -36,4 +36,9 @@ python manage.py createsuperuser
 ```
 7. Navigate to either the /Home/ page or the /Admin/ page to log in
 
+## Credits
+Props to this [video][link] that walked me through building a Django Website.
+
+
+[link]: https://www.youtube.com/watch?v=t10QcFx7d5k
 [database]: https://github.com/Sseankzs/Gnome-Chompski-Tracking-Database-System
