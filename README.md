@@ -1,6 +1,6 @@
 # Database Management System
 ## Created by using Django and MySQL
-This is a simple website built on Django to query and showcase database queries.
+This is a simple website built on Django to query and showcase database queries. This is also the web GUI version of the CLI project [Gnome-Chompski-Tracking-Database-System][database]
 
 ### Introduction
 
@@ -35,3 +35,5 @@ python manage.py runserver
 python manage.py createsuperuser
 ```
 7. Navigate to either the /Home/ page or the /Admin/ page to log in
+
+[database]: https://github.com/Sseankzs/Gnome-Chompski-Tracking-Database-System
