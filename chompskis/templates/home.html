@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+    <h1>Welcome to the Gnome Chompski Database Management System</h1>
+    <h2>Gnome Chompskis</h2>
+    <a href="{% url 'add_chompski' %}" class="btn btn-secondary">Add Chompski</a>
+    <br/>
+    <br/>
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Height</th>
+          <th scope="col">Weight</th>
+          <th scope="col">no_teeth</th>
+          <th scope="col">Swarm_id</th>
+        </tr>
+      </thead>
+      <tbody>
+{% if chompskis%}
+    {%for chompski in chompskis%}
+        <tr>
+          <td><a href="{% url 'details' chompski.chompskis_id%}">{{ chompski.chompskis_id }}</a></td>
+          <td>{{ chompski.name }}</td>
+          <td>{{ chompski.age }}</td>
+          <td>{{ chompski.height }}</td>
+          <td>{{ chompski.weight }}</td>
+          <td>{{ chompski.no_teeth }}</td>
+          <td> {{ chompski.swarm_id }}</td>
+        </tr>
+  {% endfor %}
+{% endif %} 
+ 
+{%  else  %}
+    <br/>
+    <div class="col-md-6 offset-md-3">
+      <h1>Welcome to the Gnome Chompski Database Management System</h1>
+      <form action='{% url 'home' %}'method='POST'>
+          {% csrf_token %}
+          <form>
+              <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" name= "username" placeholder="Username" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" >Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+              </div>
+              <button type="submit" class="btn btn-secondary">Login</button>
+            </form>
+      </form>
+  </div>
+{% endif %}
+{% endblock %}
