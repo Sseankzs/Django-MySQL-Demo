@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenCorp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            algin-items: center;
+        }
+        .button-container {
+            display: inline-block;
+            flex-direction: column;
+            vertical-align: top;
+            width: 48%;
+            align-items: center;
+            
+        }
+        .button {
+            border: 2px black solid;
+            display: block;
+            width: 150px;
+            padding: 10px;
+            margin: 10px auto;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gnome Chompskis Management System</h1>
+    </header>
+    <div class="container">
+        <div class="button-container">
+            <a href="#" class="button">Display all tables</a>
+            <a href="#" class="button">Delete Tuples</a>
+            <a href="functions/" class="button">Swarm Functions</a>
+            <a href="#" class="button">Show Min</a>
+            <a href="#" class="button">Update Password</a>
+        </div>
+        <div class="button-container">
+            <a href="#" class="button">Add Tuples</a>
+            <a href="#" class="button">Search Tuples</a>
+            <a href="#" class="button">Show Max</a>
+            <a href="#" class="button">Show Average</a>
+            <a href="../" class="button">Quit</a>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

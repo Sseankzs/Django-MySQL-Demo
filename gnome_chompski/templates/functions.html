@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenCorp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            align-items: center;
+        }
+        .button-container {
+            display: inline-block;
+            margin: 10px auto;
+            vertical-align: top;
+            width: 48%;
+            align-items: center;
+        }
+        .button {
+            display: block;
+            width: 70%;
+            padding: 10px;
+            margin: 10px auto;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px black solid;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Choose your actions</h1>
+    </header>
+    <div class="container">
+        <div class="button-container">
+            <a href="#" class="button">Average Quantity</a>
+            <a href="#" class="button">Sort by Quantity (Descending)</a>
+            <a href="#" class="button">Update Swarm Location</a>
+        </div>
+        <div class="button-container">
+            <a href="#" class="button">Sort by Quantity (Ascending)</a>
+            <a href="#" class="button">Swarm Quantity</a>
+            <a href="../" class="button">Back</a>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
